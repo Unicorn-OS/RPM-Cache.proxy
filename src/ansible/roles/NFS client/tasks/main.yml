@@ -1,0 +1,26 @@
+- name: get server
+  include_tasks: getServer.yml
+
+- name: Install NFS
+  become: true
+  ansible.builtin.dnf:
+    name: nfs-utils
+    state: latest
+
+- name: Create mount directory
+  ansible.builtin.file:
+    path: "{{ mountpoint }}"
+    state: directory
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+    mode: '{{ permission_debian }}'
+  become: true
+
+- name: Mount NFS volume
+  ansible.posix.mount:
+    src: "{{ nfs_server }}:{{ export_path }}"
+    path: "{{ mountpoint }}"
+    opts: rw,sync,hard
+    state: mounted
+    fstype: nfs
+  become: true

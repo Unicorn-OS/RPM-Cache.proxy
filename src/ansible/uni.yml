@@ -1,3 +1,6 @@
 - hosts: localhost #, fedora, ubuntu
+  vars_files:
+    - vars/Export.yml
+
   roles:
   - DNF local plugin

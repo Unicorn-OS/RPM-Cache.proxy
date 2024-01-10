@@ -1,6 +1,8 @@
 - name: DNF local caching server
   hosts: all #default
   remote_user: vagrant
+  vars_files:
+    - vars/Export.yml
 
   roles:
     - DNF local plugin

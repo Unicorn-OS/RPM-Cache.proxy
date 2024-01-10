@@ -1,8 +1,12 @@
-root_dir: "{{ ansible_env.HOME }}/.uni/data/proxy-cache/DNF-local-plugin/{{ ansible_architecture }}"
+nfs_share_dir: "{{ root_dir }}/proxy-cache/DNF-local-plugin"
 
-repo_dir: "{{ root_dir }}/repo"
+arch_dir: "{{ nfs_share_dir }}/{{ ansible_architecture }}"
+
+repo_dir: "{{ arch_dir }}/repo"
 
 # Set dlp_cachedir to a directory on the local filesystem to accelerate
 # createrepo. When present, createrepo creates a cache of repository checksums
 # that are reused rather than recalculated each time createrepo is called.
-dlp_cachedir: "{{ root_dir }}/cache"
+cache_dir: "{{ arch_dir }}/cache"
+
+config_file: /etc/dnf/plugins/local.conf

@@ -1,0 +1,1 @@
+root_dir: "{{ ansible_env.HOME }}/.uni/data"
