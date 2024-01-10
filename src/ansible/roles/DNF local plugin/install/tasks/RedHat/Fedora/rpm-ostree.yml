@@ -1,0 +1,10 @@
+---
+- name: Install DNF local plugin
+  community.general.rpm_ostree_pkg:
+    name: "{{ item }}"
+    state: present
+  loop:
+  - python3-dnf-plugin-local
+  become: true
+  notify:
+  - Reboot

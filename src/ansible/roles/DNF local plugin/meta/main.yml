@@ -1,0 +1,3 @@
+dependencies:
+- DNF local plugin/install
+# - DNF local plugin/init

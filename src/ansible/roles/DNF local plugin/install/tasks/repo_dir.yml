@@ -1,0 +1,12 @@
+- name: Create repo dir
+  ansible.builtin.file:
+    path: "{{ repo_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Configure repo dir
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/dnf/plugins/local.conf
+    regexp: '^# repodir = '
+    line: "repodir = {{ repo_dir }}"

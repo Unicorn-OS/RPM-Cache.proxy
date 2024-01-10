@@ -1,0 +1,8 @@
+---
+# Guide: https://fedoramagazine.org/use-the-dnf-local-plugin-to-speed-up-your-home-lab/
+
+- name: Install DNF local plugin
+  become: true
+  ansible.builtin.dnf:
+    name: python3-dnf-plugin-local
+    state: latest

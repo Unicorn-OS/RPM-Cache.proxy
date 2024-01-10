@@ -1,5 +1,8 @@
 # Guide:
 https://fedoramagazine.org/use-the-dnf-local-plugin-to-speed-up-your-home-lab/
 
+# Doc:
+- https://dnf-plugins-core.readthedocs.io/en/latest/local.html
+
 # Discuss:
 https://www.reddit.com/r/selfhosted/comments/x9zfyj/caching_server_for_fedora/

@@ -1,0 +1,6 @@
+- name: DNF local caching server
+  hosts: all #default
+  remote_user: vagrant
+
+  roles:
+    - DNF local plugin

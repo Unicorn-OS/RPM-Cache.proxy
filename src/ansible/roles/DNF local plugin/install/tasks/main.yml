@@ -1,0 +1,4 @@
+- include_tasks: repo_dir.yml
+
+- name: OS specific
+  include_tasks: "{{ ansible_os_family }}/main.yml"
