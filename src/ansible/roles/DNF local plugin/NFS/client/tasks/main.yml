@@ -1,0 +1,5 @@
+- name: Install NFS
+  become: true
+  ansible.builtin.dnf:
+    name: nfs-utils
+    state: latest

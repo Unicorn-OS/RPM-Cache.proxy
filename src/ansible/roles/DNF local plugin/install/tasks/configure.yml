@@ -1,0 +1,31 @@
+- name: Create repo dir
+  ansible.builtin.file:
+    path: "{{ repo_dir }}"
+    state: directory
+    mode: '0755'
+
+# - name: Configure repo dir
+#   become: true
+#   ansible.builtin.lineinfile:
+#     path: /etc/dnf/plugins/local.conf
+#     regexp: '^# repodir = '
+#     line: "repodir = {{ repo_dir }}"
+
+- name: Set repodir in conf
+  community.general.ini_file:
+    path: "{{ dlp_conf }}"
+    section: main
+    option: repodir
+    value: "{{ repo_dir }}"
+    mode: "644"
+
+# from: https://github.com/buckaroogeek/ansible-role-fedora-dnf-local-plugin
+# set cachedir if defined
+- name: Set cachedir if defined
+  community.general.ini_file:
+    path: "{{ dlp_conf }}"
+    section: createrepo
+    option: cachedir
+    value: "{{ dlp_cachedir }}"
+    mode: "644"
+  when: (dlp_cachedir is defined) and (dlp_cachedir|length > 0)
