@@ -1,0 +1,2 @@
+# Use NFS client in container, for simple homogeneous network storage! Else mount a volume from host.
+use_NFS_in_container: True

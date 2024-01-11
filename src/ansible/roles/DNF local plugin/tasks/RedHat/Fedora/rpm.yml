@@ -4,5 +4,7 @@
 - name: Install DNF local plugin
   become: true
   ansible.builtin.dnf:
-    name: python3-dnf-plugin-local
+    name:
+      - python3-dnf-plugin-local
+      - createrepo_c
     state: latest

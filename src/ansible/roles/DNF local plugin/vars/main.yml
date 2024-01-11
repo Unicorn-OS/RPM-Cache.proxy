@@ -1,4 +1,6 @@
-root_: "{{ mountpoint }}/proxy-cache/DNF-local-plugin"
+parent_label: proxy-cache  # This is shared with other '.proxy' subprojects, like Apt-Cacher.proxy
+
+root_: "{{ mountpoint }}/{{ parent_label }}/DNF-local-plugin"
 
 arch_dir: "{{ root_ }}/{{ ansible_architecture }}"
 

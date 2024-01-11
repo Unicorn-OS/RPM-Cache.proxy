@@ -30,4 +30,5 @@
     option: cachedir
     value: "{{ cache_dir }}"
     mode: "644"
-  when: (cache_dir is defined) and (cache_dir|length > 0)
+  # when: (cache_dir is defined) and (cache_dir|length > 0)
+  when: false
