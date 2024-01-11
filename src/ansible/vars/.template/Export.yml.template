@@ -3,3 +3,4 @@ origin: "{{ ansible_env.HOME }}/.uni/data"
 export: /srv/data
 mountpoint: "{{ origin }}"
 number: 0
+options: "*(rw,insecure,sync,no_subtree_check,no_root_squash)"
