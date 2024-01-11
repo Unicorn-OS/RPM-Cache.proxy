@@ -1,0 +1,5 @@
+volume_name: data
+origin: "{{ ansible_env.HOME }}/.uni/data"
+export: /srv/data
+mountpoint: "{{ origin }}"
+number: 0

@@ -5,4 +5,5 @@
     - vars/Export.yml
 
   roles:
-    - DNF local plugin
+    # - DNF local plugin
+    - NFS client

@@ -1,1 +1,0 @@
-https://fedoramagazine.org/use-the-dnf-local-plugin-to-speed-up-your-home-lab/

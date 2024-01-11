@@ -1,6 +1,6 @@
-nfs_share_dir: "{{ root_dir }}/proxy-cache/DNF-local-plugin"
+root_: "{{ mountpoint }}/proxy-cache/DNF-local-plugin"
 
-arch_dir: "{{ nfs_share_dir }}/{{ ansible_architecture }}"
+arch_dir: "{{ root_ }}/{{ ansible_architecture }}"
 
 repo_dir: "{{ arch_dir }}/repo"
 
