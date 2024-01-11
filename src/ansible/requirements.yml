@@ -1,0 +1,3 @@
+---
+- src: https://github.com/UniStor/NFS.Server
+  name: nfs_server
