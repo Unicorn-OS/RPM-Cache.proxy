@@ -1,3 +1,8 @@
+- name: mount NFS, if not container
+  ansible.builtin.include_role:
+    name: NFS client
+  when: (use_NFS_in_container) or (ansible_env.container is not defined)
+
 - name: OS specific
   include_tasks: "{{ ansible_os_family }}/main.yml"
 

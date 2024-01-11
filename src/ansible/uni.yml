@@ -1,6 +1,7 @@
-- hosts: localhost #, fedora, ubuntu
+- name: DNF local plugin to save bandwidth
+  hosts: localhost # , fedora, ubuntu
   vars_files:
     - vars/Export.yml
 
   roles:
-  - DNF local plugin
+    - DNF local plugin
