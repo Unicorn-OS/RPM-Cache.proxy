@@ -21,4 +21,5 @@
     opts: rw,sync,hard
     state: mounted
     fstype: nfs
+    boot: true
   become: true
